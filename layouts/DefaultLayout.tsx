@@ -8,7 +8,7 @@ function DefaultLayout({ children }: { children: ReactNode }) {
 		<div className='relative flex h-screen flex-col'>
 			<Head />
 			<Navbar />
-			<main className={'container max-w-[1200px]'}>{children}</main>
+			<main className={'container max-w-[1280px] px-6'}>{children}</main>
 			<footer className='flex w-full items-center justify-center py-3'>
 				<Link isExternal className='flex items-center gap-1 text-current' href='https://nextui-docs-v2.vercel.app?utm_source=next-app-template' title='nextui.org homepage'>
 					<span className='text-default-600'>Powered by</span>

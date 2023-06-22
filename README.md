@@ -22,4 +22,17 @@ npx create-next-app -e https://github.com/nextui-org/next-pages-template
 
 ## License
 
+## Set Webstorm Tailwind Config
+
+Add `tv` to class regex in [Webstorm Tailwind Config](jetbrains://WebStorm/settings?name=Languages+%26+Frameworks--Style+Sheets--Tailwind+CSS)
+
+```json5
+{
+	// ...
+	experimental: {
+		classRegex: [['tv\\(([^)]*)\\)', '["\'`]([^"\'`]*).*?["\'`]']],
+	},
+}
+```
+
 Licensed under the [MIT license](https://github.com/nextui-org/next-pages-template/blob/main/LICENSE).
