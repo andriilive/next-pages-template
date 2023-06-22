@@ -23,27 +23,3 @@ npx create-next-app -e https://github.com/nextui-org/next-pages-template
 ## License
 
 Licensed under the [MIT license](https://github.com/nextui-org/next-pages-template/blob/main/LICENSE).
-
-## ToDO:
-
-### Process deps
-
--  @types/mdx
--  @typescript-eslint/eslint-plugin
--  autoprefixer"
--  dotenv
--  eslint
--  eslint-config-next
--  postcss
--  prettier
--  prettier-plugin-tailwindcss
--  react-i18next
--  sharp
--  tailwindcss-debug-screens
--  typescript
-
-**optionalDependencies**
-
--  generate-license-file
--  husky
--  next-sitemap
