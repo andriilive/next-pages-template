@@ -1,30 +1,58 @@
 {
-  "name": "next-pages-template",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "@nextui-org/react": "^0.0.0-dev-v2-20230601153241",
-    "framer-motion": "^10.12.16",
-    "@types/node": "20.2.5",
-    "@types/react": "18.2.8",
-    "@types/react-dom": "18.2.4",
-    "autoprefixer": "10.4.14",
-    "clsx": "^1.2.1",
-    "eslint": "8.41.0",
-    "eslint-config-next": "13.4.4",
-    "next": "13.4.4",
-    "next-themes": "^0.2.1",
-    "postcss": "8.4.24",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "tailwind-variants": "^0.1.5",
-    "tailwindcss": "3.3.2",
-    "typescript": "5.0.4"
-  }
+	"name": "next-pages-template",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"dev": "next dev",
+		"build": "next build",
+		"start": "next start",
+		"export": "next build && next export -o .next/.dist",
+		"lint": "eslint . --fix && prettier . --write && next lint",
+		"prepare": "husky install",
+		"postinstall": "npm run prepare",
+		"pre-commit": "npm run lint",
+		"postbuild": "npm run gen:design-tokens-tw && npm run gen:license && npm run gen:sitemap",
+		"gen:design-tokens-tw": "npx tailwindcss-export-config -c tailwind.config.js -d public/generated/designTokens -f json",
+		"gen:sitemap": "npx next-sitemap",
+		"gen:license": "npx generate-license-file --input ./package.json --output ./public/generated/license.txt --overwrite"
+	},
+	"dependencies": {
+		"@mdx-js/loader": "^2.3.0",
+		"@mdx-js/react": "^2.3.0",
+		"@next/mdx": "^13.4.5",
+		"@nextui-org/react": "^0.0.0-dev-v2-20230601153241",
+		"@tailwindcss/typography": "^0.5.9",
+		"clsx": "^1.2.1",
+		"framer-motion": "^10.12.16",
+		"next": "13.4.4",
+		"next-seo": "^6.1.0",
+		"next-themes": "^0.2.1",
+		"next-translate": "^2.0.6",
+		"react": "18.2.0",
+		"react-dom": "18.2.0",
+		"tailwind-variants": "^0.1.5",
+		"tailwindcss": "3.3.2"
+	},
+	"devDependencies": {
+		"@next/bundle-analyzer": "^13.4.7",
+		"@types/mdx": "^2.0.5",
+		"@types/react": "^18.2.13",
+		"@types/react-dom": "^18.2.6",
+		"@typescript-eslint/eslint-plugin": "^5.60.0",
+		"autoprefixer": "^10.4.14",
+		"eslint": "^8.43.0",
+		"eslint-config-next": "^13.4.7",
+		"next-translate-plugin": "^2.0.5",
+		"postcss": "^8.4.24",
+		"prettier": "^2.8.8",
+		"prettier-plugin-tailwindcss": "^0.3.0",
+		"typescript": "^5.1.3"
+	},
+	"optionalDependencies": {
+		"@types/node": "^20.3.1",
+		"generate-license-file": "^2.0.0",
+		"husky": "^8.0.3",
+		"next-sitemap": "^4.1.3",
+		"tailwindcss-export-config": "^4.1.0"
+	}
 }

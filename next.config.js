@@ -1,6 +1,27 @@
-/** @type {import('next').NextConfig} */
+const nextTranslate = require('next-translate-plugin')
+const withMDX = require('@next/mdx')()
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+	enabled: process.env.ANALYZE === 'true',
+})
+
+/*** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
+	async rewrites() {
+		return [
+			{
+				source: '/humans.txt',
+				destination: '/api/humans.txt',
+			},
+		]
+	},
 }
 
-module.exports = nextConfig
+module.exports = nextTranslate(
+	withBundleAnalyzer(
+		withMDX({
+			reactStrictMode: false,
+			pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
+			...nextConfig,
+		}),
+	),
+)

@@ -1,0 +1,10 @@
+.github
+.idea
+.husky
+.git
+.next
+
+node_modules
+
+public/favicon
+public/generated

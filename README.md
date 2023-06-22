@@ -4,13 +4,13 @@ This is a template for creating applications using Next.js 13 (pages directory) 
 
 ## Technologies Used
 
-- [Next.js 13](https://nextjs.org/docs/getting-started)
-- [NextUI](https://nextui-docs-v2.vercel.app/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [Tailwind Variants](https://tailwind-variants.org)
-- [TypeScript](https://www.typescriptlang.org/)
-- [Framer Motion](https://www.framer.com/motion/)
-- [next-themes](https://github.com/pacocoursey/next-themes)
+-  [Next.js 13](https://nextjs.org/docs/getting-started)
+-  [NextUI](https://nextui-docs-v2.vercel.app/)
+-  [Tailwind CSS](https://tailwindcss.com/)
+-  [Tailwind Variants](https://tailwind-variants.org)
+-  [TypeScript](https://www.typescriptlang.org/)
+-  [Framer Motion](https://www.framer.com/motion/)
+-  [next-themes](https://github.com/pacocoursey/next-themes)
 
 ## How to Use
 
@@ -19,6 +19,31 @@ To create a new project based on this template using `create-next-app`, run the 
 ```bash
 npx create-next-app -e https://github.com/nextui-org/next-pages-template
 ```
+
 ## License
 
 Licensed under the [MIT license](https://github.com/nextui-org/next-pages-template/blob/main/LICENSE).
+
+## ToDO:
+
+### Process deps
+
+-  @types/mdx
+-  @typescript-eslint/eslint-plugin
+-  autoprefixer"
+-  dotenv
+-  eslint
+-  eslint-config-next
+-  postcss
+-  prettier
+-  prettier-plugin-tailwindcss
+-  react-i18next
+-  sharp
+-  tailwindcss-debug-screens
+-  typescript
+
+**optionalDependencies**
+
+-  generate-license-file
+-  husky
+-  next-sitemap

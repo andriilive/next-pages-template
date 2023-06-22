@@ -1,0 +1,9 @@
+.idea
+.husky
+.next
+.git
+node_modules
+public
+styles
+*.mdx
+*.md
