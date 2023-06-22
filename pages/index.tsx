@@ -1,4 +1,3 @@
-import NextLink from 'next/link'
 import { Link } from '@nextui-org/link'
 import { Snippet } from '@nextui-org/snippet'
 import { Code } from '@nextui-org/code'
@@ -9,8 +8,8 @@ import { GithubIcon } from 'components/icons'
 
 export default function IndexPage() {
 	return (
-		<section className='flex flex-col items-center justify-center gap-4 py-8 md:py-10'>
-			<div className='inline-block max-w-lg justify-center text-center'>
+		<section className={'flex flex-col items-center justify-center gap-4 py-8 md:py-10'}>
+			<div className={'inline-block max-w-lg justify-center text-center'}>
 				<h1 className={title()}>Make&nbsp;</h1>
 				<h1 className={title({ color: 'violet' })}>beautiful&nbsp;</h1>
 				<br />
@@ -18,10 +17,9 @@ export default function IndexPage() {
 				<h4 className={subtitle({ class: 'mt-4' })}>Beautiful, fast and modern React UI library.</h4>
 			</div>
 
-			<div className='flex gap-3'>
+			<div className={'flex gap-3'}>
 				<Link
 					isExternal
-					as={NextLink}
 					href={webConfig.links.docs}
 					className={buttonStyles({
 						color: 'primary',
@@ -30,7 +28,7 @@ export default function IndexPage() {
 					})}>
 					Documentation
 				</Link>
-				<Link isExternal as={NextLink} className={buttonStyles({ variant: 'bordered', radius: 'full' })} href={webConfig.links.github}>
+				<Link isExternal className={buttonStyles({ variant: 'bordered', radius: 'full' })} href={webConfig.links.github}>
 					<GithubIcon size={20} />
 					GitHub
 				</Link>
