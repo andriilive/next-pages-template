@@ -4,6 +4,6 @@ declare module '*.module.pcss.css' {
 }
 
 /* Link with children */
-declare module 'next/link' {
-	export type LinkProps = LinkProps & { children?: React.ReactNode }
-}
+// declare module 'next/link' {
+// 	export type LinkProps = LinkProps & { children?: React.ReactNode }
+// }
