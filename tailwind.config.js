@@ -1,9 +1,9 @@
 import {nextui} from '@nextui-org/react'
-
 const {fontFamily} = require("tailwindcss/defaultTheme")
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+    darkMode: "class",
     content: [
         './pages/**/*.{js,ts,jsx,tsx,mdx}',
         './components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -13,9 +13,6 @@ module.exports = {
         './node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}'
     ],
     theme: {
-        fontFamily: {
-            sans: ["var(--font-sans)", "var(--font-sans-fallback, var(--font-sans))", ...fontFamily.sans]
-        },
         container: {
             center: true,
             padding: "2rem",
@@ -24,16 +21,10 @@ module.exports = {
             },
         },
         extend: {
-            // https://tailwindcss.com/docs/typography-plugin#adding-custom-color-themes
-            typography: ({ theme }) => ({
-                DEFAULT: {
-                    css: {
-
-                    },
-                },
+            typography: ({theme}) => ({
+                DEFAULT: {css: {}},
                 dark: {
                     css: {
-                        '--tw-TESTVAR': '"TESTVARIABLE"',
                         '--tw-prose-body': theme('colors.foreground'),
                         '--tw-prose-headings': theme('colors.foreground'),
                         '--tw-prose-lead': theme('colors.pink[700]'),
@@ -108,9 +99,26 @@ module.exports = {
                 lg: `var(--radius)`,
                 md: `calc(var(--radius) - 2px)`,
                 sm: "calc(var(--radius) - 4px)",
-            }
+            },
+            fontFamily: {
+                sans: [`var(--font-sans, ${fontFamily.sans})`],
+            },
+            keyframes: {
+                "accordion-down": {
+                    from: {height: 0},
+                    to: {height: "var(--radix-accordion-content-height)"},
+                },
+                "accordion-up": {
+                    from: {height: "var(--radix-accordion-content-height)"},
+                    to: {height: 0},
+                },
+            },
+            animation: {
+                "accordion-down": "accordion-down 0.2s ease-out",
+                "accordion-up": "accordion-up 0.2s ease-out",
+            },
+
         },
     },
-    darkMode: "class",
-    plugins: [nextui(), require('@tailwindcss/typography')],
+    plugins: [nextui(), require('@tailwindcss/typography'), require("tailwindcss-animate")],
 }

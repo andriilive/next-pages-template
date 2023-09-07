@@ -13,7 +13,6 @@ export default function App({Component, pageProps}: AppProps) {
                     {`
                       :root {
                         --font-sans: ${fonts.sans.var};
-                        --fonts-sans-fallback: ${fonts.sans.varFallback};
                       }
                     `}
                 </style>
