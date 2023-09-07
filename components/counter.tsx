@@ -1,11 +1,11 @@
+import {Button} from "@/components/ui/button";
 import { useState } from "react";
-import { Button } from "@nextui-org/react";
 
 export const Counter = () => {
 	const [count, setCount] = useState(0);
 
 	return (
-		<Button radius="full" onPress={() => setCount(count + 1)}>
+		<Button onClick={() => setCount(count + 1)}>
 			Count is {count}
 		</Button>
 	);

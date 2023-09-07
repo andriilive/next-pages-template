@@ -1,16 +1,16 @@
-import {nextui} from '@nextui-org/react'
-const {fontFamily} = require("tailwindcss/defaultTheme")
+import type {Config} from 'tailwindcss'
+import {fontFamily} from "tailwindcss/defaultTheme";
+import {PluginUtils} from "tailwindcss/types/config";
 
-/** @type {import('tailwindcss').Config} */
-module.exports = {
+const config: Config = {
     darkMode: "class",
     content: [
-        './pages/**/*.{js,ts,jsx,tsx,mdx}',
+        './layouts/**/*.{js,ts,jsx,tsx,mdx}',
         './components/**/*.{js,ts,jsx,tsx,mdx}',
+        './pages/**/*.{js,ts,jsx,tsx,mdx}',
         './theme/**/*.{js,ts,jsx,tsx,mdx}',
-        './draft/**/*.{js,ts,jsx,tsx,mdx}',
-        './app/**/*.{js,ts,jsx,tsx,mdx}',
-        './node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}'
+        './config/**/*.{js,ts,jsx,tsx,mdx}',
+        './src/**/*.{js,ts,jsx,tsx,mdx}',
     ],
     theme: {
         container: {
@@ -21,11 +21,15 @@ module.exports = {
             },
         },
         extend: {
-            typography: ({theme}) => ({
-                DEFAULT: {css: {}},
+            typography: ({theme, breakpoints, colors}: PluginUtils) => ({
+                DEFAULT: {
+                    css: {
+                        '--test-var': colors.gray['100'],
+                    },
+                },
                 dark: {
                     css: {
-                        '--tw-prose-body': theme('colors.foreground'),
+                        '--tw-prose-body': colors.gray['100'],
                         '--tw-prose-headings': theme('colors.foreground'),
                         '--tw-prose-lead': theme('colors.pink[700]'),
                         '--tw-prose-links': theme('colors.pink[900]'),
@@ -105,12 +109,12 @@ module.exports = {
             },
             keyframes: {
                 "accordion-down": {
-                    from: {height: 0},
+                    from: {height: '0'},
                     to: {height: "var(--radix-accordion-content-height)"},
                 },
                 "accordion-up": {
                     from: {height: "var(--radix-accordion-content-height)"},
-                    to: {height: 0},
+                    to: {height: '0'},
                 },
             },
             animation: {
@@ -120,5 +124,6 @@ module.exports = {
 
         },
     },
-    plugins: [nextui(), require('@tailwindcss/typography'), require("tailwindcss-animate")],
+    plugins: [require('@tailwindcss/typography'), require("tailwindcss-animate")],
 }
+export default config

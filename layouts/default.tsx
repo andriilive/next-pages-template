@@ -1,6 +1,8 @@
-import { Navbar } from "@/components/navbar";
-import { Link } from "@nextui-org/link";
-import { Head } from "./head";
+import {TwHelper} from "@/components/TwHelper";
+import {NavigationMenuShadcn} from "@/layouts/shadcn";
+import Link from "next/link";
+import { Head } from "@/layouts/head";
+import * as React from "react";
 
 export default function DefaultLayout({
 	children,
@@ -8,15 +10,15 @@ export default function DefaultLayout({
 	children: React.ReactNode;
 }) {
 	return (
-		<div className="relative flex flex-col h-screen">
+		<div className={'relative'}>
 			<Head />
-			<Navbar />
-			<main className="container mx-auto max-w-7xl px-6 flex-grow">
+			<TwHelper />
+			<NavigationMenuShadcn />
+			<main className={'container mx-auto max-w-7xl px-6'}>
 				{children}
 			</main>
-			<footer className="w-full flex items-center justify-center py-3">
+			<footer className={'w-full flex items-center justify-center py-3'}>
 				<Link
-					isExternal
 					className="flex items-center gap-1 text-current"
 					href="https://nextui-docs-v2.vercel.app?utm_source=next-app-template"
 					title="nextui.org homepage"

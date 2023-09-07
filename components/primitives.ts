@@ -1,5 +1,5 @@
 import { tv } from "tailwind-variants";
-
+export { button as tvButton } from "@nextui-org/theme";
 export const title = tv({
 	base: "tracking-tight inline font-semibold",
 	variants: {
