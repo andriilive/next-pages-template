@@ -11,6 +11,10 @@ export const siteConfig = {
 	{
 		label: "Typography",
 		href: "/typography",
+	},
+	{
+		label: "shadcn",
+		href: "/shadcn",
 	}
 	],
 	navMenuItems: [
