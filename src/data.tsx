@@ -55,3 +55,24 @@ export const siteConfig = {
     sponsor: "https://patreon.com/jrgarciadev"
 	},
 };
+
+
+// https://ui.shadcn.com/docs/components/navigation-menu
+export type NavItem = { title: string; href: string; description: string };
+export const navItems: { title: string; href: string; description: string }[] = [
+	{
+		title: "Home",
+		href: "/",
+		description: "A modal dialog that interrupts the user with important content and expects a response.",
+	},
+	{
+		title: "Typo",
+		href: "/typography",
+		description: "For sighted users to preview content available behind a link.",
+	},
+	{
+		title: "MD(X)",
+		href: "/mdx",
+		description: "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
+	}
+]

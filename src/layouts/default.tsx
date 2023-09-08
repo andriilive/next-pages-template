@@ -1,19 +1,26 @@
-import {TwHelper} from "@/components/TwHelper";
-import {NavigationMenuShadcn} from "@/layouts/shadcn";
+import {TwHelper} from "@/src/components/helpers/TwHelper";
+import {Nav} from "@/src/components/semantic/nav";
+import {navItems} from "@/src/data";
 import Link from "next/link";
-import { Head } from "@/layouts/head";
+import { Head } from "@/src/layouts/head";
 import * as React from "react";
 
+import {Inter} from "next/font/google"
+const fontSans = Inter({
+	subsets: ["latin"],
+	weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+	variable: '--font-sans',
+})
 export default function DefaultLayout({
 	children,
 }: {
 	children: React.ReactNode;
 }) {
 	return (
-		<div className={'relative'}>
+		<div className={`relative ${fontSans.variable}`}>
 			<Head />
 			<TwHelper />
-			<NavigationMenuShadcn />
+			<Nav navItems={navItems} aria={'primary'} />
 			<main className={'container mx-auto max-w-7xl px-6'}>
 				{children}
 			</main>
