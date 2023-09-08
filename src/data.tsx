@@ -1,4 +1,4 @@
-export type SiteConfig = typeof siteConfig
+export type _SiteConfig = typeof siteConfig
 
 export const siteConfig = {
   name: "Next.js + NextUI",
@@ -73,7 +73,13 @@ export const navItems: { title: string; href: string; description: string }[] =
         "For sighted users to preview content available behind a link.",
     },
     {
-      title: "MD(X)",
+      title: "MD",
+      href: "/md",
+      description:
+        "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
+    },
+    {
+      title: "MDx",
       href: "/mdx",
       description:
         "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",

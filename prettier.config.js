@@ -1,4 +1,5 @@
 // @ts-check
+// noinspection SpellCheckingInspection
 
 /** @type {import('@ianvs/prettier-plugin-sort-imports').Config} */
 module.exports = {

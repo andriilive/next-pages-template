@@ -1,12 +1,14 @@
+// noinspection ES6UnusedImports
+
 import * as React from "react"
 import Link from "next/link"
 import {
+  NavigationMenuContent as _NavigationMenuContent,
+  NavigationMenuTrigger as _NavigationMenuTrigger,
   NavigationMenu,
-  NavigationMenuContent,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-  NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/src/components/ui/navigation-menu"
 import { NavItem } from "@/src/data"

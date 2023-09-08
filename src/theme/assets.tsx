@@ -2,7 +2,7 @@ import * as React from "react"
 import { LucideIcon, LucideProps, Moon, Sun } from "lucide-react"
 
 export const icons: {
-  [key: string]: LucideIcon | ((props: LucideProps) => JSX.Element)
+  [key: string]: LucideIcon | ((props: LucideProps) => React.JSX.Element)
 } = {
   mon: Moon,
   logo: (props) => (

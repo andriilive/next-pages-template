@@ -21,7 +21,11 @@ const config: Config = {
       },
     },
     extend: {
-      typography: ({ theme, breakpoints, colors }: PluginUtils) => ({
+      typography: ({
+        theme,
+        breakpoints: _breakpoints,
+        colors,
+      }: PluginUtils) => ({
         DEFAULT: {
           css: {
             "--test-var": colors.gray["100"],
