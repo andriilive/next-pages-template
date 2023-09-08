@@ -1,14 +1,14 @@
-import {Html, Head, Main, NextScript} from 'next/document'
-import React from "react";
+import React from "react"
+import { Head, Html, Main, NextScript } from "next/document"
 
 export default function Document() {
-    return (
-        <Html lang="en">
-            <Head/>
-            <body className={`font-sans antialiased bg-background`}>
-                <Main/>
-                <NextScript/>
-            </body>
-        </Html>
-    )
+  return (
+    <Html lang="en">
+      <Head />
+      <body className={`bg-background font-sans antialiased`}>
+        <Main />
+        <NextScript />
+      </body>
+    </Html>
+  )
 }

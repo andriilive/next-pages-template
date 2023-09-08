@@ -1,1 +1,1 @@
-export * from '@/src/theme/assets'
+export * from "@/src/theme/assets"
