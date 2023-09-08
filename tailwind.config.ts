@@ -15,10 +15,7 @@ const config: Config = {
   theme: {
     container: {
       center: true,
-      padding: "2rem",
-      screens: {
-        "2xl": "1400px",
-      },
+      screens: [],
     },
     extend: {
       typography: ({
@@ -127,6 +124,10 @@ const config: Config = {
       },
     },
   },
-  plugins: [require("@tailwindcss/typography"), require("tailwindcss-animate")],
+  plugins: [
+    require("@tailwindcss/typography"),
+    require("tailwindcss-animate"),
+    require("@tailwindcss/forms"),
+  ],
 }
 export default config

@@ -1,24 +1,19 @@
 import * as React from "react"
-import { Inter } from "next/font/google"
 import Link from "next/link"
+import ShopNav from "@/draft/ShopNav"
 import { ThemeToggle } from "@/src/components/helpers/ThemeSwitch"
 import { TwHelper } from "@/src/components/helpers/TwHelper"
 import { Nav } from "@/src/components/semantic/nav"
 import { navItems } from "@/src/data"
 import { Head } from "@/src/layouts/head"
 
-const fontSans = Inter({
-  subsets: ["latin"],
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-  variable: "--font-sans",
-})
 export default function DefaultLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
   return (
-    <div className={`relative ${fontSans.variable}`}>
+    <div className={`relative`}>
       <Head />
       <TwHelper />
       <div className={"container flex justify-between py-2"}>
@@ -40,4 +35,17 @@ export default function DefaultLayout({
       </footer>
     </div>
   )
+}
+
+export function ShopLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <div className={`relative`}>
+      <ShopNav />
+      <main className={"container mx-auto max-w-7xl px-6"}>{children}</main>
+    </div>
+  )
+}
+
+export function EmptyLayout({ children }: { children: React.ReactNode }) {
+  return <main className={""}>{children}</main>
 }

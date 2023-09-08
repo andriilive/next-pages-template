@@ -2,6 +2,12 @@
 
 This is a template for creating applications using Next.js 13 (pages directory) and NextUI (v2).
 
+O Nas
+Blog
++420 777 473 999
+info@allwineshop.eu
+Prodejna (Praha 5)
+
 ## Technologies Used
 
 - [Next.js 13](https://nextjs.org/docs/getting-started)
